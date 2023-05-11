@@ -6,3 +6,6 @@ ls -lt
 grep -rn testfodler1/ -e file 
 find . -name '*.txt' -exec grep -H "2" {} \;
 //-H show filename
+cp file1.txt ../file1.txt
+sudo chown root file1.txt
+chmod 777 file1.txt 

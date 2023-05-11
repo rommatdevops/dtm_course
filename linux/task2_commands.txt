@@ -1,0 +1,12 @@
+nohup ping google.com &
+top -o +%CPU
+kill 470957
+killall firefox
+pkill firefox
+python3 restarter.py  &
+jobs 
+fg 1
+bg 
+df 
+free 
+uptime 
