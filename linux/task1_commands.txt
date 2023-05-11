@@ -1,0 +1,8 @@
+mkdir testfodler1
+cd testfodler1
+touch file1.txt & touch file2.txt & touch file3.txt
+echo "file1" > file1.txt & echo "file2" > file2.txt  & echo "file3" > file3.txt
+ls -lt
+grep -rn testfodler1/ -e file 
+find . -name '*.txt' -exec grep -H "2" {} \;
+//-H show filename
