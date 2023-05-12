@@ -24,6 +24,7 @@ select_one_name () {
         
     done
     
+    
 }
 
 check_name_in_list () {
@@ -82,9 +83,9 @@ select_func() {
     select name in Frank Lisa Steven Cody Walton
     do
         echo "You have chosen $name"
+        read_input
         return
     done
-    
 }
 
 shift_func () {
@@ -95,8 +96,17 @@ shift_func () {
     echo "Great, that\`s shift"
 }
 
-read_file () {
-
+read_input () {
+    echo "And another one"
+    echo "Enter your favorite color: "  
+    
+    input=""
+    while [[ $input = "" ]]
+    do
+        read
+        echo "Your favorite color is $REPLY"
+        return
+    done
 }
 
 usage () {
@@ -119,10 +129,13 @@ main () {
     fi
 }
 
+set -x
+
 while getopts "a:b:" opt; do
   case $opt in
     a)
         a_arg="$OPTARG"
+        set +x
         echo "Used parameter -a"
 
         shift_func $@
@@ -152,6 +165,8 @@ while getopts "a:b:" opt; do
         ;;
   esac
 done
+
+
 
 if [[ -z "$a_arg" ]] || [[ -z "$b_arg" ]]
 then
