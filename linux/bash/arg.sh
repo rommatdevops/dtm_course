@@ -20,11 +20,8 @@ select_one_name () {
     new_array=()
     for name in "$@"
     do 
-        check_name_in_list "$name"
-        
+        check_name_in_list "$name" 
     done
-    
-    
 }
 
 check_name_in_list () {
@@ -125,7 +122,6 @@ main () {
         usage "$#"
     else
         arguments_count "$@"
-        
     fi
 }
 
@@ -165,8 +161,6 @@ while getopts "a:b:" opt; do
         ;;
   esac
 done
-
-
 
 if [[ -z "$a_arg" ]] || [[ -z "$b_arg" ]]
 then
