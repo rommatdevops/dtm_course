@@ -1,0 +1,4 @@
+env
+export MYLASTNAME='Baggio'
+printenv MYLASTNAME
+unset MYLASTNAME

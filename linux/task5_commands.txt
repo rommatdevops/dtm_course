@@ -1,0 +1,17 @@
+sudo useradd captainmarvel
+sudo groupadd marvel
+sudo usermod -g marvel captainmarvel
+id captainmarvel
+sudo passwd captainmarvel
+sudo chage -l captainmarvel
+sudo chage -E 2023-05-14 captainmarvel
+sudo -u captainmarvel -s
+whoami
+chsh -> /usr/bin/sh
+exit 
+sudo groupmod -n marvelcomics marvel
+grep marvelcomics /etc/group
+groups captainmarvel
+getent passwd captainmarvel
+sudo userdel captainmarvel
+sudo groupdel marvelcomics
