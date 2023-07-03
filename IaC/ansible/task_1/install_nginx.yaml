@@ -1,0 +1,20 @@
+---
+- name: install Nginx
+  hosts: dtm_servers
+  become: true
+
+  tasks:
+    - name: update packages apt
+      apt:
+        update_cache: yes
+
+    - name: install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: start nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes

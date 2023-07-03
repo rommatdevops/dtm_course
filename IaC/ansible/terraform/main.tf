@@ -11,7 +11,7 @@ resource "aws_instance" "my_ubuntu" {
   vpc_security_group_ids = [aws_security_group.DynamicSecurityGroup_1.id]
   subnet_id              = aws_subnet.prod_subnet.id
   key_name               = "aws-server-3"
-  user_data              = file("user_data.sh")
+
   tags = {
     Name = "Server with security group"
   }
